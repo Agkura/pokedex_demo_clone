@@ -1,3 +1,27 @@
 // Place all the styles related to the Api::Pokemon controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "variables";
+
+.poke-list img {
+  max-width: 20px;
+  max-height: 20px;
+  margin-right: 10px;
+  margin-left: 10px;
+}
+
+.poke-list {
+  display: flex;
+  align-content: center;
+  margin: 5px;
+  border-bottom: 1px solid $grey;
+  width: 10%;
+  padding: 5px;
+}
+
+.all-poke {
+  list-style-type: none;
+  display: flex;
+  flex-direction: column;
+  margin-left: 10px;
+}

@@ -1,5 +1,11 @@
-html, body {
+html, body, li, ul, div, p {
 	margin: 0;
 	padding: 0;
 	border: 0;
+	list-style: none;
+	list-style-type: none;
+}
+
+p {
+	display: inline;
 }
