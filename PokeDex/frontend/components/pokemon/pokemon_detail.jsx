@@ -1,4 +1,6 @@
 import React from 'react';
+import { Route, Link } from 'react-router-dom';
+import ItemDetailContainer from './item_detail_container';
 
 class PokemonDetail extends React.Component{
   constructor(props){
@@ -16,17 +18,25 @@ class PokemonDetail extends React.Component{
   }
 
   render(){
-    let { id, name, attack, defense, image_url, moves } = this.props.pokemon;
+    const { id, name, attack, defense, image_url, moves } = this.props.pokemon;
+    let items = this.props.pokemon.items || [];
+    const allItems = items.map( (el, idx) => <li key={idx}><Link to={"/pokemon/" + id + "/item/" + el.id}>{el.name}</Link></li>);
+
     return (
-      <ul className="pokemon-detail">
-        <li><img src={image_url}></img></li>
-        <li><p>{id}</p></li>
-        <li><p>{name}</p></li>
-        <li><p>{attack}</p></li>
-        <li><p>{defense}</p></li>
-        <li><p>{moves}</p></li>
-      </ul>
-      // item detail container
+      <div className="pokemon-col">
+        <ul className="pokemon-detail">
+          <li><img src={image_url}></img></li>
+          <li><p>{id}</p></li>
+          <li><p>{name}</p></li>
+          <li><p>{attack}</p></li>
+          <li><p>{defense}</p></li>
+          <li><p>{moves}</p></li>
+        </ul>
+        <ul className="item-list">
+          {allItems}
+        </ul>
+        <Route path="/pokemon/:pokemonId/item/:itemId" component={ItemDetailContainer} />
+      </div>
     );
   }
 }
