@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 import { fetchAllPokemon, fetchPokemon } from './util/api_util';
-import { requestAllPokemon, receiveAllPokemon, requestPokemon } from './actions/pokemon_actions';
+import { requestAllPokemon, receiveAllPokemon, requestPokemon, createPokemon} from './actions/pokemon_actions';
 import { selectAllPokemon } from './reducers/selectors';
 
 window.fetchAllPokemon = fetchAllPokemon;
@@ -22,3 +22,5 @@ window.requestAllPokemon = requestAllPokemon;
 window.selectAllPokemon = selectAllPokemon;
 window.requestPokemon = requestPokemon;
 window.fetchPokemon = fetchPokemon;
+window.createPokemon = createPokemon;
+window.newpokemon = { name: "Venusaurdddd", attack: 82, defense: 83, poke_type: "grass", moves: [ "tackle", "vine whip", "razor leaf"], image_url: "http://hackathon-in-a-box.org/img/box.png" }
